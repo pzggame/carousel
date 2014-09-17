@@ -1,0 +1,85 @@
+body {
+    font: 700 1.125em/140% "Gotham A","Gotham B",Arial,Helvetica,sans-serif;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+
+    /*
+      Introduced in IE 10.
+      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.box-padding {
+    padding: 10px;
+}
+
+.margin-bottom {
+    margin-bottom: 10px;
+}
+
+/* Specify Swiper's Size: */
+.swiper-container{
+    width: 600px;
+    height: 380px;
+}
+
+.swiper-slide {
+    background-color: #dedad7;
+    margin: 10px;
+    font: 300 .875em/155% "Gotham SSm A","Gotham SSm B",Arial,Helvetica,sans-serif;
+    padding: 10px;
+}
+
+.winner{
+    text-shadow: -1px -1px #aa3030;
+}
+
+.icon-left-open {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.icon-right-open {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.story-meter,.story-meter-value {
+    height: 11px;
+    background: #666;
+}
+
+.story-meter {
+    width: 100%;
+    position: relative
+}
+
+.story-meter-value {
+    background-color: #818B8D;
+    display: block;
+}
+
+.story-meter-value.NDP {
+    background-color: #E89D35;
+}
+
+.story-meter-value.LIB {
+    background-color: #CD6E5B;
+}
+
+.story-meter-value.PC {
+    background-color: #336699;
+}
+
+.story-meter-value.GRN {
+    background-color: #5AA75E;
+}

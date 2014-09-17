@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" ng-app="carouselApp">
+<head>
+    <meta charset="utf-8">
+    <title>Election Results for 10 Ridings</title>
+    <link rel="stylesheet" href="css/libs/idangerous.swiper.css">
+    <link rel="stylesheet" href="css/libs/fontello.css">
+    <!--[if IE 7]><link rel="stylesheet" href="css/libs/fontello-ie7.css"><![endif]-->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/libs/angular.min.js"></script>
+    <script src="js/ctrls/controllers.js"></script>
+    <script src="js/libs/idangerous.swiper.min.js"></script>
+</head>
+<body ng-controller="RidingListCtrl">
+<h1 class="text-center">ELECTION RESULTS</h1>
+<div class="swiper-container box-padding">
+    <i id="arrow-left" class="icon-left-open"></i>
+    <i id="arrow-right" class="icon-right-open"></i>
+    <div class="swiper-wrapper">
+        <div ng-repeat="riding in ridingDetails" ng-init="totalVotes = getTotal(riding.results);" class="swiper-slide">
+            <h3 class="text-center">
+                {{riding.name}}
+            </h3>
+            <div ng-repeat="result in riding.results | orderBy:'-votes'" class="margin-bottom">
+                <div ng-class="getHighlight($index)">
+                    {{result.name}}
+                </div>
+                <div>
+                    Votes: {{result.votes}}
+                </div>
+                <div class="story-meter">
+                    <div class="story-meter-value {{result.partyCode}}" ng-init="percent = Math.round((result.votes/totalVotes)*100)+'%'" ng-style="{width: percent}"</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    window.onload = function() {
+        var mySwiper = new Swiper('.swiper-container',{
+            slidesPerView: 3,
+            loop: true,
+            autoplay: 2000
+        });
+        var arrowLeft = document.getElementById('arrow-left');
+        var arrowRight= document.getElementById('arrow-right');
+
+        arrowLeft.addEventListener('click', function(e) {
+            e.preventDefault();
+            mySwiper.swipePrev();
+        }, false);
+
+        arrowRight.addEventListener('click', function(e) {
+            e.preventDefault();
+            mySwiper.swipeNext();
+        }, false);
+    };
+</script>
+
+</body>
+</html>
