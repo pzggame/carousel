@@ -11,36 +11,45 @@
     <script src="js/ctrls/controllers.js"></script>
     <script src="js/libs/idangerous.swiper.min.js"></script>
 </head>
-<body ng-controller="RidingListCtrl">
-<h1 class="text-center">ELECTION RESULTS</h1>
-<div class="swiper-container box-padding">
-    <i id="arrow-left" class="icon-left-open"></i>
-    <i id="arrow-right" class="icon-right-open"></i>
-    <div class="swiper-wrapper">
-        <div ng-repeat="riding in ridingDetails" ng-init="totalVotes = getTotal(riding.results);" class="swiper-slide">
-            <h3 class="text-center">
-                {{riding.name}}
-            </h3>
-            <div ng-repeat="result in riding.results | orderBy:'-votes'" class="margin-bottom">
-                <div ng-class="getHighlight($index)">
-                    {{result.name}}
-                </div>
-                <div>
-                    Votes: {{result.votes}}
-                </div>
-                <div class="story-meter">
-                    <div class="story-meter-value {{result.partyCode}}" ng-init="percent = Math.round((result.votes/totalVotes)*100)+'%'" ng-style="{width: percent}"</div>
+<body ng-controller="RidingListCtrl" class="no-select-effect">
+<div class="inner-center">
+    <img src="img/header.png">
+</div>
+<div class="container-eight inline-block top-align left-margin">
+    <h1 class="text-center">ELECTION RESULTS</h1>
+    <div class="swiper-container box-padding">
+        <i id="arrow-left" class="icon-left-open"></i>
+        <i id="arrow-right" class="icon-right-open"></i>
+        <div class="swiper-wrapper">
+            <div ng-repeat="riding in ridingDetails" ng-init="totalVotes = getTotal(riding.results);" class="swiper-slide">
+                <h3 class="text-center">
+                    {{riding.name}}
+                </h3>
+                <div ng-repeat="result in riding.results | orderBy:'-votes'" class="margin-bottom">
+                    <div ng-class="getHighlight($index)">
+                        {{result.name}}
+                    </div>
+                    <div>
+                        Votes: {{result.votes}}
+                    </div>
+                    <div class="story-meter">
+                        <div class="story-meter-value {{result.partyCode}}" ng-init="percent = Math.round((result.votes/totalVotes)*100)+'%'" ng-style="{width: percent}">
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="container-three inline-block">
+    <img src="img/ads.png" class="img-fit">
+</div>
 <script>
     window.onload = function() {
         var mySwiper = new Swiper('.swiper-container',{
-            slidesPerView: 3,
-            loop: true,
-            autoplay: 2000
+            slidesPerView: 'auto',
+            loop: true
         });
         var arrowLeft = document.getElementById('arrow-left');
         var arrowRight= document.getElementById('arrow-right');

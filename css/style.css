@@ -1,9 +1,47 @@
 body {
     font: 700 1.125em/140% "Gotham A","Gotham B",Arial,Helvetica,sans-serif;
+}
+
+.img-fit {
+    max-width:100%;
+    max-height:100%;
+}
+
+.left-margin {
+    margin-left: 100px;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.inner-center {
+    display: table;
+    margin: 0 auto;
+}
+
+.container-eight {
+    width: 800px;
+}
+
+.container-three {
+    width: 300px;
+}
+
+.top-align {
+    vertical-align: top;
+}
+
+@media (max-width: 1238px) {
+    .container-three {
+        display: none;
+    }
+}
+
+.no-select-effect {
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
-
     /*
       Introduced in IE 10.
       See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
@@ -26,15 +64,13 @@ body {
 
 /* Specify Swiper's Size: */
 .swiper-container{
-    width: 600px;
+    width: 700px;
     height: 380px;
 }
 
 .swiper-slide {
-    background-color: #dedad7;
-    margin: 10px;
-    font: 300 .875em/155% "Gotham SSm A","Gotham SSm B",Arial,Helvetica,sans-serif;
     padding: 10px;
+    font: 300 .875em/155% "Gotham SSm A","Gotham SSm B",Arial,Helvetica,sans-serif;
 }
 
 .winner{
